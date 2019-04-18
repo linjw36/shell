@@ -11,7 +11,7 @@ if [ $ID -eq 0 ];then
   echo "this user is root."
 else
   id $USER | grep wheel
-  if [ $? -eq 0 ];then
+  if [ ! $ID ] || [ $? -eq 0 ];then
     echo "$USER is Admin."
   else
     echo "this user is not admin."
