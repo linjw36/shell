@@ -12,7 +12,9 @@ sudo yum -y groupinstall "Development Tools"
 
 sudo groupadd -g 996 nginx
 sudo useradd -M -s /sbin/nologin -g nginx -u 998 nginx
-
+if [ $? -ne 0 ];then
+  exit
+fi
 wget https://nginx.org/download/nginx-1.14.2.tar.gz
 
 # install nginx web service.
